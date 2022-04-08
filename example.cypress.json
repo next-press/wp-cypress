@@ -1,0 +1,30 @@
+{
+  "experimentalStudio": true,
+  "projectId": "1111",
+  "chromeWebSecurity": false,
+  "baseUrl": "http://wu.localhost",
+  "wp": {
+    "port": 80,
+    "multisite": "subdomain",
+    "url": "wu.localhost",
+    "dbPort": 3366,
+    "version": [
+      "5.3",
+      "5.9.3"
+    ],
+    "volumes" : [
+      {
+        "localPath": "./example/dir",
+        "path": "/host/example/dir"
+      }
+    ],
+    "plugins": [
+      "./plugin/path"
+    ],
+    "phpVersion": 7.4,
+    "resources" : {
+      "cpus": 1,
+      "memory": "256M"
+    }
+  }
+}
