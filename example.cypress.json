@@ -12,10 +12,12 @@
       "5.3",
       "5.9.3"
     ],
+    "pluginsDir": "./external-plugins",
+    "themesDir": "./external-themes",
     "volumes" : [
       {
         "localPath": "./example/dir",
-        "path": "/host/example/dir"
+        "path": "/example/dir"
       }
     ],
     "plugins": [
