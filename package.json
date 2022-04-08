@@ -1,5 +1,5 @@
 {
-  "name": "@nextpress/wp-cypress",
+  "name": "@next-press/wp-cypress",
   "version": "0.9.5",
   "description": "WordPress end to end testing with Cypress.io",
   "repository": "https://github.com/bigbite/wp-cypress",
