@@ -4,11 +4,13 @@ namespace WP_Cypress;
 
 use WP_CLI;
 use WP_Cypress\Fixtures;
+use WP_Cypress\Fixtures\FixtureCommand;
 use WP_Cypress\Seeder\SeedCommand;
 
 class Plugin {
 	public function __construct() {
 		add_action( 'init', [ $this, 'add_seed_command' ], 1 );
+		add_action( 'init', [ $this, 'add_fixture_command' ], 1 );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_assets' ], 1 );
 
 		$this->add_user_command();
@@ -40,6 +42,19 @@ class Plugin {
 		}
 
 		WP_CLI::add_command( 'seed', SeedCommand::class );
+	}
+
+	/**
+	 * Add the fixture command to be executed by the WP CLI.
+	 *
+	 * @return void
+	 */
+	public function add_fixture_command(): void {
+		if ( ! class_exists( 'WP_CLI' ) ) {
+			return;
+		}
+	
+		WP_CLI::add_command( 'fixture', FixtureCommand::class );
 	}
 
 	/**
