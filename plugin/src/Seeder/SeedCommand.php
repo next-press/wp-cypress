@@ -7,6 +7,8 @@ use WP_CLI;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
+use WP_Cypress\Fixtures\FixtureCommand;
+
 class SeedCommand {
 	const DEFAULT_SEEDS_DIR = 'wp-content/plugins/wp-cypress/src/Seeds/*';
 
@@ -31,6 +33,9 @@ class SeedCommand {
 
 		$this->include_dir( self::USER_SEEDS_DIR );
 		$this->include_dir( self::DEFAULT_SEEDS_DIR );
+
+		$this->include_dir( FixtureCommand::DEFAULT_FIXTURES_DIR );
+		$this->include_dir( FixtureCommand::USER_FIXTURES_DIR );
 
 		if ( isset( $assoc_args['clean'] ) ) {
 			$this->clean( $seeder_name );
